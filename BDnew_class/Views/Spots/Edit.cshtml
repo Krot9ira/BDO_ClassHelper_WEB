@@ -1,0 +1,55 @@
+﻿@model BDnew_class.Models.Spot
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<body class="backforlist">
+<h1>Edit</h1>
+
+<h4>Spot</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdSpot" />
+            <div class="form-group">
+                <label asp-for="NameSpot" class="control-label"></label>
+                <input asp-for="NameSpot" maxlength="20" class="form-control" />
+                <span asp-validation-for="NameSpot" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpotDescription" class="control-label"></label>
+                <textarea asp-for="SpotDescription" maxlength="2000" id="form75" class="md-textarea form-control" rows="3"></textarea>
+                <span asp-validation-for="SpotDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="SpotGif" class="control-label"></label>
+                <input asp-for="SpotGif" class="form-control" />
+                <span asp-validation-for="SpotGif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Ap" class="control-label"></label>
+                <input asp-for="Ap" min="0" class="form-control" />
+                <span asp-validation-for="Ap" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dp" class="control-label"></label>
+                <input asp-for="Dp" min="0" class="form-control" />
+                <span asp-validation-for="Dp" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Вернуться к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+    </body>

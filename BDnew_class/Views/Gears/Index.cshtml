@@ -1,0 +1,47 @@
+﻿@model IEnumerable<BDnew_class.Models.Gear>
+
+@{
+    ViewData["Title"] = "Index";
+}
+    <body class="backforlist">
+        <h1>Виды сетов</h1>
+
+        <p>
+            <a class="btn btn-outline-secondary" asp-action="Create">Create New</a>
+        </p>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="border border-dark">
+                        @Html.DisplayNameFor(model => model.GearClass)
+                    </th>
+                    <th class="border border-dark">
+                        @Html.DisplayNameFor(model => model.GearDescription)
+                    </th>
+                    <th class="border border-dark">
+
+                    </th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="col-xs-12 border border-dark">
+                            @Html.DisplayFor(modelItem => item.GearClass)
+                        </td>
+                        <td class="col-xs-12 border border-dark">
+                            @Html.DisplayFor(modelItem => item.GearDescription)
+                        </td>
+
+                        <td class="col-xs-12 border border-dark">
+                            <a asp-action="Edit" asp-route-id="@item.IdGear">Edit</a>
+
+                            <a asp-action="Delete" asp-route-id="@item.IdGear">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+        </body>

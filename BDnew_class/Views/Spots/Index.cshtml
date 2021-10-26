@@ -1,0 +1,56 @@
+﻿@model IEnumerable<BDnew_class.Models.Spot>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body class="backforlist">
+<h1>Споты</h1>
+
+<p>
+    <a class="btn btn-outline-secondary" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.NameSpot)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.SpotDescription)
+            </th>
+           
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.Ap)
+            </th>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.Dp)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.NameSpot)
+            </td>
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.SpotDescription)
+            </td>
+            
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.Ap)
+            </td>
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.Dp)
+            </td>
+            <td class="col-xs-12 border border-dark">
+                <a asp-action="Edit" asp-route-id="@item.IdSpot">Edit</a> |
+                
+                <a asp-action="Delete" asp-route-id="@item.IdSpot">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </body>

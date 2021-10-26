@@ -1,0 +1,46 @@
+﻿@model BDnew_class.Models.Spell
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<body class="backforlist">
+<h1>Удаление</h1>
+
+<h3>Вы уверены что хотите это удалить ???????</h3>
+<div>
+    <h4>Spell</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NameSpell)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NameSpell)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SpellDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SpellDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.SpellVid)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.SpellVid)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Class)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Class.NameClass)
+        </dd class>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdSpell" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Обратно к списку</a>
+    </form>
+</div>
+    </body>

@@ -1,0 +1,25 @@
+﻿@model BDnew_class.Models.Class
+@{
+    ViewBag.Title = "Редактирование классов";
+}
+    <form asp-action="edit" asp-controller="home" asp-route-id="@Model.IdClass">
+        <div class="form-group">
+            <label asp-for="IdClass" class="control-label">id @Model.IdClass</label>
+            <input type="number" asp-for="IdClass" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="NameClass"  class="control-label"></label>
+            <input type="text" asp-for="NameClass" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ClassVid" class="control-label">Ссылка на видео</label>
+            <input type="text" asp-for="ClassVid" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="ClassDescription" class="control-label">описание класса</label>
+            <input type="text" asp-for="ClassDescription" class="form-control" />
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Сохранить" class="btn btn-default" />
+        </div>
+    </form>

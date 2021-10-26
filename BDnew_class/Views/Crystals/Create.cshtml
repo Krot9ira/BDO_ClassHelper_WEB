@@ -1,0 +1,44 @@
+﻿@model BDnew_class.Models.Crystal
+
+@{
+    ViewData["Title"] = "Create";
+}
+<body class="backforlist">
+<h1>Создание</h1>
+
+<h4>Crystal</h4>
+<hr />
+<div class="row">
+    <div class="col-md-10">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="IdCrystal" class="control-label"></label>
+                <input asp-for="IdCrystal" class="form-control" />
+                <span asp-validation-for="IdCrystal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrystalName" class="control-label"></label>
+                <input asp-for="CrystalName" class="form-control" />
+                <span asp-validation-for="CrystalName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CrystalDescription" class="control-label"></label>
+                <input asp-for="CrystalDescription" class="form-control" />
+                <span asp-validation-for="CrystalDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>

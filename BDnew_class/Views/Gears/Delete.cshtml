@@ -1,0 +1,40 @@
+﻿@model BDnew_class.Models.Gear
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<body class="backforlist">
+<h1>Удаление</h1>
+
+<h3>Вы уверены что хотите это удалить ???????</h3>
+<div>
+    <h4>Gear</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GearClass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GearClass)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GearDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GearDescription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.GearGif)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.GearGif)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdGear" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Обртано к списку</a>
+    </form>
+</div>
+    </body>

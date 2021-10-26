@@ -1,0 +1,75 @@
+﻿@model IEnumerable<BDnew_class.Models.Class>
+@{
+    ViewBag.Title = "Главная";
+}
+   
+    <head>
+       
+    </head>
+    <body style="background:transparent url('img/HVteP.png') no-repeat center center ">
+        <div class="container mycontainer">
+            <div class="row row-offcanvas row-offcanvas-right  col-12">
+
+                <div class="col-xs-12 col-sm-9 col-xl-8 jumbotron jumbotron-fluid myJumbotron">
+
+                    <div class="jumbotron myJumbotronen myTextcolorprimary">
+
+                        <h1>Добро пожаловать!</h1>
+                        <p>У нас на сайте вы найдете необходимы данные о классе который вас интересует.</p>
+                    </div>
+                    <div class="row">
+                        @foreach (var item in Model)
+                        {
+
+                        <div class="col-xs-6 col-lg-4">
+                            <h2>@item.NameClass</h2>
+                            <p>@item.ClassDescription </p>
+                            <p><a asp-action="Details" asp-controller="Spells" asp-route-id="@item.IdClass" class="btn btn-outline-secondary" type="button"> Узнать о способностях класса</a></p>
+                            
+                        </div><!--/.col-xs-6.col-lg-4-->
+
+
+                        }
+
+
+
+                    </div><!--/row-->
+                </div><!--/.col-xs-12.col-sm-9-->
+                
+                <div class="col-xs-6 col-sm-3  sidebar-offcanvas" id="sidebar">
+                    
+                    
+                   
+                    <div class="list-group ">
+                        <a asp-action="Index" asp-controller="Classes" class="list-group-item backforlist ">Редактирование списка классов</a>
+                        <a asp-action="Index" asp-controller="Spells" class="list-group-item backforlist">Редактирование списка способностей</a>
+                        <a asp-action="Index" asp-controller="Gears" class="list-group-item backforlist">Информация о экипировке</a>
+                        <a asp-action="Index" asp-controller="Spots" class="list-group-item backforlist">Информация о спотах</a>
+                        <a asp-action="Index" asp-controller="Crystals" class="list-group-item backforlist">Информация о инкрустации</a>
+                      
+                    </div>
+                </div><!--/.sidebar-offcanvas-->
+
+            </div><!--/row-->
+        </div>
+       
+        @section Scripts {
+            @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+        }
+    </body>
+
+<!--<a asp-action="Create">Добавить пользователя</a>
+<a asp-action="Details">Временно</a>
+<table class="table">
+    <tr><td>Имя</td><td>Возраст</td></tr>
+    @foreach (var item in Model)
+    {
+        <a asp-action="Details" asp-controller="Spells" asp-route-id="@item.IdClass">Подробнее о @item.NameClass</a>
+        <a asp-action="Edit" asp-controller="Home" asp-route-id="@item.IdClass">Изменить @item.NameClass</a>
+        <a asp-action="Delete" asp-controller="Home" asp-route-id="@item.IdClass">Удалить @item.NameClass</a>
+
+
+        <tr><td>@item.NameClass</td><td>@item.ClassVid</td></tr>
+    }
+</table>
+    -->

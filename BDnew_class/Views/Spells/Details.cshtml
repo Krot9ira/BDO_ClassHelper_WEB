@@ -1,0 +1,56 @@
+﻿@model BDnew_class.Models.Spell
+
+@{
+    ViewData["Title"] = "Details";
+}
+<header>
+<a asp-action="Index" asp-controller="Home"> Back to List</a>
+
+</header>
+<body class="myback">
+    <div>
+        <h4>Спсобности класса @Model.Class.NameClass</h4>
+        <hr />
+        <dl class="row blackback">
+            @{ using (CUSERSKAHASDESKTOPBDO_GUIDE_CLASSMDFContext db = new CUSERSKAHASDESKTOPBDO_GUIDE_CLASSMDFContext())
+                {
+                    // перебираем данные из базы данных
+                    foreach (var item in db.Spell.Where(a => a.ClassId == Model.ClassId))
+                    {
+                        // показываем данные
+
+                        <dt class="col-sm-2 border border-dark border-right-0 blackback myFat">
+                            @Html.DisplayNameFor(modelItem => item.NameSpell)
+                        </dt>
+                        <dd class="col-sm-10 border border-dark border-right-0 border-bottom-0 border-left-0 blackback myFat">
+                            @Html.DisplayFor(modelItem => item.NameSpell)
+                        </dd>
+                        <dt class="col-sm-2 border border-dark border-right-0 blackback myFat">
+                            @Html.DisplayNameFor(modelItem => item.SpellDescription)
+                        </dt>
+                        <dd class="col-sm-10 border border-dark border-bottom-0 border-right-0 border-left-0 blackback myFat">
+                            @Html.DisplayFor(modelItem => item.SpellDescription)
+                        </dd>
+                        <dt class="col-sm-2 border border-dark border-right-0 blackback myFat">
+                            @Html.DisplayNameFor(modelItem => item.SpellVid)
+                        </dt>
+                        <dd class="col-sm-10 blackback">
+                            <iframe width="650" height="460" src="@item.SpellVid" frameborder="0"></iframe>
+                            
+                            
+                          
+                        </dd>
+
+                    }
+                }
+            }
+        </dl>
+    </div>
+    <div>
+        <!-- <a asp-action="Edit" asp-route-id="@Model.IdSpell">Edit</a> -->
+
+
+        <a asp-a
+    <a asp-action="Index" asp-controller="Home">Обртано к списку</a>
+    </div>
+</body>

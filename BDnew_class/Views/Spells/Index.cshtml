@@ -1,0 +1,50 @@
+﻿@model IEnumerable<BDnew_class.Models.Spell>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body class="backforlist">
+<h1>Список всех способностей всех классов</h1>
+
+<p>
+    <a class="btn btn-outline-secondary" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.NameSpell)
+            </th >
+            <th class="border border-dark">
+                @Html.DisplayNameFor(model => model.SpellDescription)
+            </th>
+            <th class="border border-dark">
+               Class
+            </th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td  class="col-xs-12 border border-dark" >
+                @Html.DisplayFor(modelItem => item.NameSpell)
+            </td>
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.SpellDescription)
+            </td>
+            
+            <td  class="col-xs-12 border border-dark" >
+                @Html.DisplayFor(modelItem => item.Class.NameClass)
+            </td>
+            <td  class="col-xs-12 border border-dark" >
+                <a class="col-xs-6" asp-action="Edit" asp-route-id="@item.IdSpell">Edit</a> 
+                
+                <a class="col-xs-6" asp-action="Delete" asp-route-id="@item.IdSpell">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </body>

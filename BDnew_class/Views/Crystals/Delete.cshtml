@@ -1,0 +1,35 @@
+﻿@model BDnew_class.Models.Crystal
+
+@{
+    ViewData["Title"] = "Delete";
+}
+<body class="backforlist">
+<h1>Удаление</h1>
+
+<h3>Вы уверены что хотите удалить это?</h3>
+<div>
+    <h4>Crystal</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CrystalName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CrystalName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CrystalDescription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CrystalDescription)
+        </dd>
+    </dl>
+    
+    <form asp-action="Delete">
+        <input type="hidden" asp-for="IdCrystal" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-action="Index">Back to List</a>
+    </form>
+</div>
+
+</body>

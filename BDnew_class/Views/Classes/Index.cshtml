@@ -1,0 +1,52 @@
+﻿@model IEnumerable<BDnew_class.Models.Class>
+
+@{
+    ViewData["Title"] = "Index";
+}
+<body class="backforlist">
+<h1>Все классы</h1>
+
+<p>
+    <a class="btn btn-outline-secondary" asp-action="Create">Create New</a>
+</p>
+<table class="table table-inverse">
+    <thead>
+        <tr>
+            <th scope="row" class="border border-dark">
+                @Html.DisplayNameFor(model => model.NameClass)
+            </th>
+            <th scope="row" class="border border-dark">
+                @Html.DisplayNameFor(model => model.ClassDescription)
+            </th>
+            <th scope="row" class="border border-dark">
+                @Html.DisplayNameFor(model => model.ClassVid)
+            </th>
+            
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.NameClass)
+            </td >
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.ClassDescription)
+            </td>
+            <td class="col-xs-12 border border-dark">
+                @Html.DisplayFor(modelItem => item.ClassVid)
+            </td>
+            <td class="col-xs-12 border border-dark" >
+                <div class="col-xs-6">
+                    <a asp-action="Edit" asp-route-id="@item.IdClass">Edit</a>
+                </div>
+                <div class="col-xs-6">
+                    <a asp-action="Delete" asp-route-id="@item.IdClass">Delete</a>
+                </div>
+
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+    </body>

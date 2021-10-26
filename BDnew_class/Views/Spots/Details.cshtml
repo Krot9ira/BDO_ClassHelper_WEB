@@ -1,0 +1,42 @@
+﻿@model BDnew_class.Models.Spot
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Spot</h4>
+    <hr />
+    <dl class="row">
+        @{ using (CUSERSKAHASDESKTOPBDO_GUIDE_CLASSMDFContext db = new CUSERSKAHASDESKTOPBDO_GUIDE_CLASSMDFContext())
+            { var far = db.Farm;
+                // перебираем данные из базы данных
+                foreach (var item in db.Spot)
+                {
+                    // показываем данные
+                  
+                    <dt class="col-sm-2 border border-dark border-right-0 blackback myFat">
+                        @Html.DisplayNameFor(modelItem => item.NameSpot)
+                    </dt>
+                    <dd class="col-sm-10 border border-dark border-right-0 border-bottom-0 border-left-0 blackback myFat">
+                        @Html.DisplayFor(modelItem => item.NameSpot)
+                    </dd>
+                    <dt class="col-sm-2 border border-dark border-right-0 blackback myFat">
+                        @Html.DisplayNameFor(modelItem => item.SpotDescription)
+                    </dt>
+                    <dd class="col-sm-10 border border-dark border-bottom-0 border-right-0 border-left-0 blackback myFat">
+                        @Html.DisplayFor(modelItem => item.SpotDescription)
+                    </dd>
+                    
+
+                }
+            }
+        }
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.IdSpot">Edit</a> |
+    <a asp-action="Index">Вернуться к списку</a>
+</div>

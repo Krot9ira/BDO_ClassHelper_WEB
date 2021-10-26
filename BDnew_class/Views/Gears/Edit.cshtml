@@ -1,0 +1,45 @@
+﻿@model BDnew_class.Models.Gear
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<body class="backforlist">
+<h1>Редактирование</h1>
+
+<h4>Gear</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="IdGear" />
+            <div class="form-group">
+                <label asp-for="GearClass" class="control-label"></label>
+                <input asp-for="GearClass" maxlength="20" class="form-control" />
+                <span asp-validation-for="GearClass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GearDescription" class="control-label"></label>
+                <textarea asp-for="GearDescription" maxlength="2000" id="form75" class="md-textarea form-control" rows="3"></textarea>
+                <span asp-validation-for="GearDescription" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GearGif" class="control-label"></label>
+                <input asp-for="GearGif" class="form-control" />
+                <span asp-validation-for="GearGif" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Обратно к списку</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
+</body>
